@@ -6,7 +6,7 @@ def main():
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.connect((host, port))
-            print(f"Connected to {host}:{port}")
+            print(f"Connectado {host}:{port}")
             while True:
                 cmd = input("C2> ")
                 if cmd.lower() in ["exit", "quit"]:
