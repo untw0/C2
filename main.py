@@ -1,12 +1,12 @@
 import socket
 
 def main():
-    host = "127.0.0.1"  
-    port = 4444       
+    h = "127.0.0.1"  
+    p = 4444       
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.connect((host, port))
-            print(f"Connectado {host}:{port}")
+            print(f"Connected to {host}:{port}")
             while True:
                 cmd = input("C2> ")
                 if cmd.lower() in ["exit", "quit"]:
@@ -19,4 +19,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
