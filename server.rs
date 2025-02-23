@@ -29,16 +29,16 @@ fn _h(mut _s: _S) {
 }
 
 fn main() {
-    let _l = _L::bind("127.0.0.1:4444").expect("Bind falhou");
-    println!("C2 Server on 4444...");
+    let _l = _L::bind("127.0.0.1:4444").expect("Bind failed");
+    println!("C2 Server running on port 4444...");
     for _i in _l.incoming() {
         match _i {
             Ok(_s) => {
-                println!("Conn: {}", _s.peer_addr().unwrap());
+                println!("Connection from: {}", _s.peer_addr().unwrap());
                 thread::spawn(move || _h(_s));
             }
             Err(e) => {
-                eprintln!("Conn erro: {}", e);
+                eprintln!("Connection error: {}", e);
             }
         }
     }
